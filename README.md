@@ -30,6 +30,22 @@ _To play the game of life all the user needs to do is to create an initial patte
 <br/>
 <br/>
 
+
+### INDEX
+
+___
+
+> [Project Development Brief](https://github.com/JessicaDosseh/Conway_Game_Of_Life/blob/main/README.md) 
+
+> [Development Plan & Systems Design]()
+
+> [Style Guide]()
+
+
+<br/>
+<br/>
+
+
 ### Project Background
 
 ___
