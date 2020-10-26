@@ -35,7 +35,7 @@ _To play the game of life all the user needs to do is to create an initial patte
 
 ___
 
-> [Project Development Brief](Conway's Game of Life) 
+> [Project Development Brief](#Conway's_Game_of_Life) 
 
 > [Development Plan & Systems Design]()
 
