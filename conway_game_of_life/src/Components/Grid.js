@@ -3,6 +3,7 @@ import produce from 'immer';
 import cellNeighbors from './Neighbors'; 
 import generateEmptyGrid from '../Functions/generateEmptyGrid'; 
 import generateRandomGrid from '../Functions/generateRandomGrid';
+import Button from './Button';
 
 // Grid Dimensions 
 const Rows = 25;
@@ -81,33 +82,30 @@ function Grid() {
   return (
     <div>
       {/* Button Components */}
-      <button
-        onClick={() => {
+      <Button 
+        title={running ? 'Stop' : 'Start'}
+        click={() => {
           setRunning(!running); 
           if (!running) {
             runningRef.current = true;
             runSimulation();
           } 
         }}
-      >
-        {running ? 'Stop' : 'Start'}
-      </button>
+      />
 
-      <button
-        onClick={() => {
+      <Button
+        title={'Clear'}
+        click={() => {
           setGrid(generateEmptyGrid(Rows, Cols)); 
         }}
-      >
-        Clear
-      </button>
+      />
 
-      <button
-        onClick={() => {
+      <Button
+        title={'Random'}
+        click={() => {
           setGrid(generateRandomGrid(Rows, Cols, FillRatio));
         }}
-      >
-        Random
-      </button>
+      />
     
       {/* Grid Rendering Component */}
       <div className="App"
