@@ -1,10 +1,11 @@
 import React from 'react';
 import Grid from './Components/Grid';
+import Banner from './Components/Banner'; 
 
 function App() {
   return (
     <div className="App">
-      Conway's Game of Life
+      <Banner/>
       <br/>
       <br/>
       <Grid/>
