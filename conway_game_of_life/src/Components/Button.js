@@ -16,7 +16,6 @@ const BlueButton = styled.button`
   background: #202743;
   border-radius: 3px;
   border: 2px solid #202743;
-  margin: 0 1em;
   padding: 0.4em 3em;
 `
 

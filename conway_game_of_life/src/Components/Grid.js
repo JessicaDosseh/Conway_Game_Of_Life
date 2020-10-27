@@ -1,24 +1,32 @@
-import React, {useState, useCallback, useRef} from 'react';
+import React, {useState, useCallback, useRef, useContext} from 'react';
+import {GameContext} from '../Contexts/GameContext';
 import produce from 'immer';
 import cellNeighbors from './Neighbors'; 
 import styled from 'styled-components';
 import generateEmptyGrid from '../Functions/generateEmptyGrid'; 
 import generateRandomGrid from '../Functions/generateRandomGrid';
 import Button from './Button';
+import ColoredLink from './ColoredLink';
+import ClearLink from './ClearLink';
 import game_of_life_logo from '../Images/game_of_life_logo.png';
 
-// Grid Dimensions 
-const Rows = 25;
-const Cols = 25;
-
-// Grid Settings Default
-const CellColor = 'pink'; 
-const SimulationSpeed = 100; 
-const FillRatio = 0.7; 
-const CellShape = 0; 
-const CellSize = '20px'; // square
 
 function Grid() {
+  // Game Context | use context to set game settings
+  const { gameSettings, setGameSettings } = useContext(GameContext);
+
+  // Grid Dimensions
+  const Rows = gameSettings.GridRows;
+  const Cols = gameSettings.GridCols;  
+
+  // Grid Settings
+  const CellShape = gameSettings.CellShape; 
+  const CellSize = gameSettings.CellSize;
+  const CellColor = gameSettings.CellColor; 
+  const FillRatio = gameSettings.FillRatio; 
+  const SimulationSpeed = gameSettings.SimulationSpeed; 
+
+
   // Grid State | use state to build out the grid 
   const [grid, setGrid] = useState(() => {
     return generateEmptyGrid(Rows, Cols); 
@@ -85,7 +93,8 @@ function Grid() {
 
   return (
     <Box>
-      <GridBox className="App"
+      <GridBox
+        CellColor={CellColor}
         style={{
           display: 'grid',
           gridTemplateColumns: `repeat(${Cols}, ${CellSize})`
@@ -165,16 +174,19 @@ function Grid() {
           <LinkBox>
             <p style={{color: "gray"}}>Feature Settings</p>
             <hr/>
-            <p>Default</p>
-            <p>Custome</p>
+            <ColoredLink title={'Default'}/>
+            <br/>
+            <ClearLink title={'Custome'} />
 
             <br/>
 
             <p style={{color: "gray"}}>Info</p>
             <hr/>
-            <p>Play Game</p>
-            <p>Rules</p>
-            <p>About This Project</p>
+            <ColoredLink title={'Play Game'}/>
+            <br/>
+            <ClearLink title={'Rules'} />
+            <br/>
+            <ClearLink title={'About This Project'} />
           </LinkBox>
         </Actions>
 
@@ -190,13 +202,14 @@ const Box = styled.div`
   flex-flow: row wrap; 
   justify-content: space-evenly;
   align-item: center;
-  width: 100%;
-  padding 50px 10px 50px 10px;
+  width: 98%;
+  padding 50px 20px 50px 20px;
 `
 
 const GridBox = styled.div`
   background: #ffffff;
-  border: 2px solid black;
+  border: 2px solid ${props => props.CellColor};
+  opacity: 0.7;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding-right: 2px;
   margin: 20px;

@@ -1,12 +1,18 @@
-import React from 'react'; 
+import React, { useContext } from 'react'; 
+import {GameContext} from '../Contexts/GameContext';
 import styled from 'styled-components'; 
 import Button from './Button';
 import game_of_life_icon from '../Images/game_of_life_icon.png'; 
 import game_of_life_logo from '../Images/game_of_life_logo.png';
 
-const Banner = (props) => {
+const Banner = () => {
+
+  // Game Context | use context to set game settings
+  const { gameSettings, setGameSettings } = useContext(GameContext); 
+  const BannerColor = gameSettings.CellColor;
+
   return (
-    <BannerBox>
+    <BannerBox BannerColor={BannerColor}>
       <Description>
         <Title>
           <img src={game_of_life_logo} width='30' height='30' style={{padding: '13px'}}/>
@@ -31,8 +37,12 @@ const Banner = (props) => {
   )
 };
 
+
 const BannerBox = styled.div`
-  background: #EAEAEA;
+  // background: #EAEAEA;
+  background: ${props => props.BannerColor};
+  color: #ffffff;
+  opacity: 0.9;
   display: flex;
   flex-flow: row wrap; 
   justify-content: space-evenly;
@@ -42,7 +52,7 @@ const BannerBox = styled.div`
 `
 
 const Description = styled.div`
-  width: 60%;
+  width: 60%; 
 `
 
 const Title = styled.div`
