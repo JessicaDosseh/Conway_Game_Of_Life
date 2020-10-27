@@ -9,7 +9,11 @@ const ColoredLink = (props) => {
 
   return (
     <Hover>
-      <GameLink LinkColor={LinkColor} onClick={props.click}>
+      <GameLink 
+        LinkColor={LinkColor} 
+        onClick={props.click} 
+        href={props.href}
+      >
         {props.title}
       </GameLink>
     </Hover>

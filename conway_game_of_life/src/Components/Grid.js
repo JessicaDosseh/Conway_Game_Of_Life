@@ -138,7 +138,7 @@ function Grid() {
         <br/>
 
         <About>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in </p>
+          <p>A very famous cellular automaton is John Conway's Game of Life. This game is a class of discrete model known as a Cellular Automaton, abbreviated CA. It's made up of a grid of cells (usually 2D, but can be any dimension) that follow a simple set of rules from which complex behaviors can emerge. </p>
         </About>
         
         <br/>
@@ -200,7 +200,12 @@ function Grid() {
               onHide={() => setRules(false)}
             />
             <br/>
+           <a 
+            href='https://github.com/JessicaDosseh/Conway_Game_Of_Life' 
+            style={{textDecoration: 'none'}}
+           >
             <ClearLink title={'About This Project'} />
+           </a> 
           </LinkBox>
         </Actions>
 

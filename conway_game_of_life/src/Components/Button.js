@@ -5,6 +5,7 @@ const Button = (props) => {
   return (
     <BlueButton
       onClick={props.click}
+      href={props.href}
     >
       {props.title}
     </BlueButton>
