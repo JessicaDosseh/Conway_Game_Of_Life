@@ -37,9 +37,9 @@ ___
 
 > [Project Development Brief](https://github.com/JessicaDosseh/Conway_Game_Of_Life/blob/main/README.md) 
 
-> [Development Plan & Systems Design]()
+> [Development Plan & Systems Design](https://github.com/JessicaDosseh/Conway_Game_Of_Life/blob/main/Development%20Design/Development_Design.md)
 
-> [Style Guide]()
+> [Style Guide](https://github.com/JessicaDosseh/Conway_Game_Of_Life/blob/main/Style%20Guide/Style_Guide.md)
 
 
 <br/>
@@ -132,9 +132,12 @@ Many different types of patterns occur in the Game of Life, which are classified
 ___
 
 
+My Project Repo — [Conway's Game of Life](https://github.com/JessicaDosseh/Conway_Game_Of_Life)
+
 Project Brief Repo — [Lambda School CS Build Week 1](https://github.com/LambdaSchool/CS-Build-Week-1)
+
+Project Unit 1 Build — [Lambda CS Unit 1 Build](https://learn.lambdaschool.com/cs/sprint/recvDjRQEq49uoWsU)
 
 Conway's Game of Life General Info — [Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
-Video Tutorial In React —  [by Ben Awad](https://www.youtube.com/watch?v=DvVt11mPuM0)
-
+Video Tutorial In React —  [Ben Awad](https://www.youtube.com/watch?v=DvVt11mPuM0)
