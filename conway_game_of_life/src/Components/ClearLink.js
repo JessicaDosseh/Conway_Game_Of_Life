@@ -27,6 +27,7 @@ const GameLink = styled.div`
   ${Hover}:hover & {
     color: #ffffff;
     background: ${props => props.LinkColor};
+    cursor: pointer;
   }
 `
 

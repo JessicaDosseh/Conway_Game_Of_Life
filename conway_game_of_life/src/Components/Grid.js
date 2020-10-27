@@ -1,17 +1,19 @@
 import React, {useState, useCallback, useRef, useContext} from 'react';
 import {GameContext} from '../Contexts/GameContext';
 import produce from 'immer';
-import cellNeighbors from './Neighbors'; 
-import styled from 'styled-components';
 import generateEmptyGrid from '../Functions/generateEmptyGrid'; 
 import generateRandomGrid from '../Functions/generateRandomGrid';
+import cellNeighbors from './Neighbors'; 
+import Rules from './Rules';
 import Button from './Button';
 import ColoredLink from './ColoredLink';
 import ClearLink from './ClearLink';
 import game_of_life_logo from '../Images/game_of_life_logo.png';
-
+import styled from 'styled-components';
 
 function Grid() {
+  const [modalShow, setModalShow] = React.useState(false);
+
   // Game Context | use context to set game settings
   const { gameSettings, setGameSettings } = useContext(GameContext);
 
@@ -126,9 +128,11 @@ function Grid() {
 
       <Description>
         <Title>
-          <img src={game_of_life_logo} width='30' height='30' style={{padding: '13px'}}/>
-          <h3>Play Conway's Game of Life</h3>
+          <img src={game_of_life_logo} width='40' height='40'/>
+          <h3 style={{paddingLeft: '10px'}}>Play Conway's Game of Life</h3>
         </Title>
+
+        <br/>
 
         <About>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in </p>
@@ -184,7 +188,11 @@ function Grid() {
             <hr/>
             <ColoredLink title={'Play Game'}/>
             <br/>
-            <ClearLink title={'Rules'} />
+            <ClearLink title={'Rules'} click={() => setModalShow(true)}/>
+            <Rules
+              show={modalShow}
+              onHide={() => setModalShow(false)}
+            />
             <br/>
             <ClearLink title={'About This Project'} />
           </LinkBox>
@@ -202,7 +210,6 @@ const Box = styled.div`
   flex-flow: row wrap; 
   justify-content: space-evenly;
   align-item: center;
-  width: 98%;
   padding 50px 20px 50px 20px;
 `
 
@@ -232,19 +239,17 @@ const Description = styled.div`
 const Title = styled.div`
   display: flex;
   flex-flow: row wrap;
-  padding-left: 45px;
 `
 
 const About = styled.div`
   width: 80%; 
   line-height: 150%;
-  padding-left: 60px;
 `
 
 const Actions = styled.div`
   display: flex;
   flex-flow: row wrap; 
-  justify-content: center;
+  justify-content: flex-start;
   align-item: center;
   width: 100%;
 `
