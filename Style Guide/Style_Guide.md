@@ -14,3 +14,7 @@
 
 <br/>
 <br/>
+
+<img src='../conway_game_of_life/public/Conway_Game_Of_Life.gif'
+<img src='./StuleGuide2_Conway_Game_Of_Life'/>
+<img src='./StuleGuide1_Conway_Game_Of_Life'/>
