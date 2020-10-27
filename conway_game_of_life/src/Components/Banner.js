@@ -17,7 +17,7 @@ const Banner = () => {
     <BannerBox BannerColor={BannerColor}>
       <Description>
         <Title>
-          <img src={game_of_life_logo} width='40' height='40'/>
+          <img alt=' ' src={game_of_life_logo} width='40' height='40'/>
           <h3 style={{paddingLeft: '10px'}}>Conway's Game of Life</h3>
         </Title>
 
@@ -40,7 +40,7 @@ const Banner = () => {
 
       </Description>
       <Icon>
-        <img src={game_of_life_icon} />
+        <img alt=' ' src={game_of_life_icon} />
       </Icon>
     </BannerBox>
   )

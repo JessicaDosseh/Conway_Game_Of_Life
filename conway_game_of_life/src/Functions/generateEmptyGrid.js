@@ -1,5 +1,3 @@
-import React from 'react'; 
-
 // Generate An Empty Grid
 
 const generateEmptyGrid = (Rows, Cols) => {

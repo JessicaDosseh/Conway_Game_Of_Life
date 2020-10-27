@@ -19,7 +19,7 @@ function App() {
     GridRows: 25,
     GridCols: 25,
     CellShape: 50, 
-    CellSize: '20px',
+    CellSize: 20,
     CellColor: '#' + randomColor, 
     FillRatio: 0.7,
     SimulationSpeed: 100,  
@@ -33,6 +33,8 @@ function App() {
         <br/>
         <Grid/>
       </Game>
+
+      <br/>
     </GameContext.Provider>
     
   );

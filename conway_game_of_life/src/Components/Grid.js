@@ -8,25 +8,27 @@ import Rules from './Rules';
 import Button from './Button';
 import ColoredLink from './ColoredLink';
 import ClearLink from './ClearLink';
-import game_of_life_logo from '../Images/game_of_life_logo.png';
+import ColorPicker from './ColorPicker';
+import CustomeSettingsForm from './CustomeSettingsForm';
 import styled from 'styled-components';
 
 function Grid() {
-  const [modalShow, setModalShow] = React.useState(false);
+  const [rules, setRules] = React.useState(false);
+  const [customeSettings, setCustomeSettings] = React.useState(false);
 
   // Game Context | use context to set game settings
-  const { gameSettings, setGameSettings } = useContext(GameContext);
+  const { gameSettings } = useContext(GameContext);
 
   // Grid Dimensions
-  const Rows = gameSettings.GridRows;
-  const Cols = gameSettings.GridCols;  
+  let Rows = parseInt(gameSettings.GridRows);
+  let Cols = parseInt(gameSettings.GridCols);  
 
   // Grid Settings
-  const CellShape = gameSettings.CellShape; 
-  const CellSize = gameSettings.CellSize;
-  const CellColor = gameSettings.CellColor; 
-  const FillRatio = gameSettings.FillRatio; 
-  const SimulationSpeed = gameSettings.SimulationSpeed; 
+  let CellShape = parseInt(gameSettings.CellShape); 
+  let CellSize = parseInt(gameSettings.CellSize) + 'px';
+  let CellColor = gameSettings.CellColor; 
+  let FillRatio = parseFloat(gameSettings.FillRatio); 
+  let SimulationSpeed = gameSettings.SimulationSpeed; 
 
 
   // Grid State | use state to build out the grid 
@@ -128,8 +130,8 @@ function Grid() {
 
       <Description>
         <Title>
-          <img src={game_of_life_logo} width='40' height='40'/>
-          <h3 style={{paddingLeft: '10px'}}>Play Conway's Game of Life</h3>
+          <ColorPicker/>
+          <h3 style={{paddingLeft: '20px'}}>Play Conway's Game of Life</h3>
         </Title>
 
         <br/>
@@ -180,18 +182,21 @@ function Grid() {
             <hr/>
             <ColoredLink title={'Default'}/>
             <br/>
-            <ClearLink title={'Custome'} />
-
+            <ClearLink title={'Custome'} click={() => setCustomeSettings(true)}/>
+            <CustomeSettingsForm
+              show={customeSettings}
+              onHide={() => setCustomeSettings(false)}
+            />
             <br/>
 
             <p style={{color: "gray"}}>Info</p>
             <hr/>
             <ColoredLink title={'Play Game'}/>
             <br/>
-            <ClearLink title={'Rules'} click={() => setModalShow(true)}/>
+            <ClearLink title={'Rules'} click={() => setRules(true)}/>
             <Rules
-              show={modalShow}
-              onHide={() => setModalShow(false)}
+              show={rules}
+              onHide={() => setRules(false)}
             />
             <br/>
             <ClearLink title={'About This Project'} />
