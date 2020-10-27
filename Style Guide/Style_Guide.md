@@ -15,6 +15,8 @@
 <br/>
 <br/>
 
-<img src='../conway_game_of_life/public/Conway_Game_Of_Life.gif'
-<img src='./StuleGuide2_Conway_Game_Of_Life'/>
-<img src='./StuleGuide1_Conway_Game_Of_Life'/>
+<img src='https://github.com/JessicaDosseh/Conway_Game_Of_Life/blob/main/conway_game_of_life/public/Conway_Game_Of_Life.gif?raw=true'/>
+<br/>
+<img src='https://github.com/JessicaDosseh/Conway_Game_Of_Life/blob/main/Style%20Guide/StuleGuide2_Conway_Game_Of_Life.png?raw=true'/>
+<br/>
+<img src='https://github.com/JessicaDosseh/Conway_Game_Of_Life/blob/main/Style%20Guide/StuleGuide1_Conway_Game_Of_Life.png?raw=true'/>
