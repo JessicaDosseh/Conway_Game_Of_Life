@@ -5,9 +5,6 @@ const generateRandomGrid = (Rows, Cols, FillRatio) => {
   for (let i = 0; i < Rows; i++){
     grid.push(Array.from(Array(Cols), () => Math.random() > FillRatio ? 1 : 0));
   }
-  console.log(`Randome grid`);
-  console.log(grid);
-  console.log(Rows, Cols, FillRatio);
   return grid;
 }
 

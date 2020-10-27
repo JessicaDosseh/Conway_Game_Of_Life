@@ -40,8 +40,8 @@ const ColorPicker = () => {
   };
 
   const popover = {
-    position: 'fixed',
-    zIndex: '2',
+    position: 'sticky',
+    zIndex: 2,
   }
   const cover = {
     position: 'fixed',

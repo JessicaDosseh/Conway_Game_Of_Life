@@ -30,7 +30,6 @@ function Grid() {
   let FillRatio = parseFloat(gameSettings.FillRatio); 
   let SimulationSpeed = gameSettings.SimulationSpeed; 
 
-
   // Grid State | use state to build out the grid 
   const [grid, setGrid] = useState(() => {
     return generateEmptyGrid(Rows, Cols); 
@@ -95,13 +94,15 @@ function Grid() {
       setTimeout(runSimulation, SimulationSpeed);
     }, [])
 
+    
   return (
     <Box>
       <GridBox
         CellColor={CellColor}
         style={{
           display: 'grid',
-          gridTemplateColumns: `repeat(${Cols}, ${CellSize})`
+          gridTemplateColumns: `repeat(${Cols}, ${CellSize})`,
+          gridTemplateRows: `repeat(${Rows}, ${CellSize})`,
         }}
       >
         {grid.map((rows, rowIndex) => 
@@ -116,8 +117,8 @@ function Grid() {
               setGrid(newGrid); 
             }}
             style={{
-              width: CellSize, 
-              height: CellSize,
+              // width: CellSize, 
+              // height: CellSize,
               background: grid[rowIndex][colIndex] ? CellColor : undefined,
               border: 'solid 1px gray',
               borderRadius: CellShape,
@@ -214,7 +215,7 @@ const Box = styled.div`
   display: flex;
   flex-flow: row wrap; 
   justify-content: space-evenly;
-  align-item: center;
+  align-items: flex-start;
   padding 50px 20px 50px 20px;
 `
 
@@ -232,6 +233,7 @@ const VerticalLine = styled.div`
   height: 600px;
   left: 50%;
   margin-left: 10px;
+  margin-right: 10px;
 `
 
 const Description = styled.div`
