@@ -141,3 +141,14 @@ Project Unit 1 Build — [Lambda CS Unit 1 Build](https://learn.lambdaschool.com
 Conway's Game of Life General Info — [Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
 Video Tutorial In React —  [Ben Awad](https://www.youtube.com/watch?v=DvVt11mPuM0)
+
+<br/>
+<br/>
+
+### Final product
+
+___
+
+<img src='https://github.com/JessicaDosseh/Conway_Game_Of_Life/blob/main/conway_game_of_life/public/Conway_Game_Of_Life.gif?raw=true'/>
+
+<br/>
