@@ -145,10 +145,12 @@ Video Tutorial In React —  [Ben Awad](https://www.youtube.com/watch?v=DvVt11mP
 <br/>
 <br/>
 
-### Final product
+### Final Product — [Site](https://jessicadosseh-conway-game-of-life.netlify.app/)
 
 ___
 
-<img src='https://github.com/JessicaDosseh/Conway_Game_Of_Life/blob/main/conway_game_of_life/public/Conway_Game_Of_Life.gif?raw=true'/>
+<img src='https://github.com/JessicaDosseh/Conway_Game_Of_Life/blob/main/conway_game_of_life/public/Conway_Game_Of_Life.gif?raw=true' href='https://jessicadosseh-conway-game-of-life.netlify.app/'/>
 
 <br/>
+
+
